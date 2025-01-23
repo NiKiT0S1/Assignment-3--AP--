@@ -56,15 +56,15 @@ func main() {
 
 	var err error
 
-	user := os.Getenv("DB_USER")
-	password := os.Getenv("DB_PASSWORD")
-	dbname := os.Getenv("DB_NAME")
-	host := os.Getenv("DB_HOST")
-	sslmode := os.Getenv("DB_SSLMODE")
+	// user := os.Getenv("DB_USER")
+	// password := os.Getenv("DB_PASSWORD")
+	// dbname := os.Getenv("DB_NAME")
+	// host := os.Getenv("DB_HOST")
+	// sslmode := os.Getenv("DB_SSLMODE")
 
-	connStr := fmt.Sprintf("user=%s dbname=%s password=%s host=%s sslmode=%s", user, dbname, password, host, sslmode)
+	// connStr := fmt.Sprintf("user=%s dbname=%s password=%s host=%s sslmode=%s", user, dbname, password, host, sslmode)
 	
-	//connStr := "user=postgres dbname=cafe password=0000 host=localhost sslmode=disable"
+	connStr := "user=postgres dbname=cafe password=0000 host=localhost sslmode=disable"
 	db, err = sql.Open("postgres", connStr)
 	if err != nil {
 		logger.WithError(err).Fatal("Ошибка подключения к базе данных")
